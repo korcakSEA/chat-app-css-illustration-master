@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: (https://github.com/korcakSEA/chat-app-css-illustration-master.git)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: (https://korcaksea.github.io/chat-app-css-illustration-master/)
 
 ## My process
 
