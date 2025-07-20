@@ -1,0 +1,324 @@
+:root {
+
+
+    /* === Text Colors === */
+    --color-text-pale-violet: hsl(276, 100%, 81%); /* Sub-heading */
+    --color-text-moderate-violet: hsl(276, 55%, 52%); /* Chat (left) */
+    --color-text-desaturated-dark-violet: hsl(271, 15%, 43%); /* Chat (right) */
+    --color-text-grayish-blue: hsl(206, 6%, 79%); /* Placeholder text */
+    --color-text-very-dark-desaturated-violet: hsl(271, 36%, 24%); /* Main heading */
+    --color-text-dark-grayish-violet: hsl(270, 7%, 64%); /* Paragraph */
+
+    --background-color-for-emp:hsla(206, 6%, 79%, 0.3);
+
+    /* === Gradient Colors === */
+    --color-gradient-light-magenta: rgb(233, 66, 255);
+    --color-gradient-light-violet: hsl(264, 100%, 61%);
+
+    --gradient-primary: linear-gradient(30deg, var(--color-gradient-light-violet) 10%, var(--color-gradient-light-magenta) 100%) ;
+    --gradient-secondary: linear-gradient(to right, var(--color-gradient-light-violet), var(--color-gradient-light-magenta));
+    --gradient-tertiary:linear-gradient(to right, var(--color-gradient-light-magenta), var(--color-gradient-light-violet));
+
+    /* === Secondary / UI Colors === */
+    --color-white: hsl(0, 0%, 100%);
+    --color-bg-light-grayish-violet: hsl(270, 20%, 96%); /* App background */
+    --color-bg-very-dark-desaturated-violet: hsl(271, 36%, 24%); /* Submit button */
+    --color-accent-very-light-magenta: hsl(289, 100%, 72%); /* Radio outline */
+
+    /* Font */
+    font-family: "Rubik", sans-serif;
+
+    /* === Font Weights === */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+}
+
+/* Element-level Global Styling */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    
+    background-color: var(--color-bg-light-grayish-violet);
+
+    display: grid;
+    place-items: center;    
+}
+
+header{
+
+    position: relative;
+    min-height: 100vh;
+    /* width: 100vw; */
+    overflow: hidden;
+
+    display: grid;
+    place-items: center;
+}
+
+
+/* Global styling */
+.left-top{
+    width: 500px;
+    height: 800px;
+    background: var(--gradient-primary);
+    border-radius: 0 0 250px 250px;
+
+    position: absolute;
+    left: min(-5rem, calc(30vw - 420px));   
+    top: min(-7rem, calc(30vw - 420px));  
+    z-index: -1;
+   
+}
+
+.right-bottom{
+    width: 500px;
+    height: 800px;
+    background: var(--color-text-grayish-blue);
+    opacity: 0.1;
+    border-radius: 250px 250px 0px 0px;
+
+    position: absolute;
+    right: min(-8rem, calc(30vw - 420px));  
+    bottom: min(-7rem, calc(30vw - 420px)); 
+    z-index: -1;
+}
+
+.wrapper{
+    position: relative;
+    z-index: 1;
+
+    width: min(80%, 52rem);
+    margin-block: 3rem;
+
+    display:grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    gap:4.5rem;
+
+    
+}
+
+.wrapper_phone{
+    width: 15.625rem;
+    height: 31.75rem;
+    padding: 0.625rem;
+    background-color: var(--color-white);
+    border-radius: 1.5rem;
+
+    box-shadow: 0.75rem 0.75rem 1.25rem rgba(0, 0, 0, 0.1);
+}
+
+.phone__info{
+    background:var(--gradient-secondary);
+    color: var(--color-white);
+
+    position: relative;
+
+    border-radius: 1.5rem 1.5rem 0.25rem 0.25rem;
+}
+
+.info__white{
+    position: absolute;
+    width: 8.125rem;
+    height: 1.5rem;
+    background-color: var(--color-white);
+    border-radius: 0.75rem;
+    left: 3rem;
+    top: -0.5rem;
+}
+
+.info__content{
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 1.875rem 0.5rem 1rem 0.5rem;
+
+}
+
+.bi path {
+    fill:white;
+}
+
+.bi-three-dots-vertical{
+    margin-left: auto;
+}
+
+.author__image{
+    width:1.5rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 1px solid var(--color-white);
+
+}
+
+.phone__author{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+}
+
+.author__name{
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-medium);
+}
+
+.author__status{
+    font-size:0.5rem;
+    color: var(--color-text-pale-violet);
+}
+
+
+/* Phone Body */
+
+.phone__body{
+    background-color: var(--color-bg-light-grayish-violet);
+    font-size: 0.5rem;
+    padding:0.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.chat__left{
+    max-width: 8rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--background-color-for-emp);
+    color: var(--color-text-moderate-violet);
+
+    border-radius: 0.5rem 0.5rem 0.5rem 0;
+
+    align-self: flex-start;
+}
+
+.chat__right{
+    max-width: 8rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--color-white);
+    color: var(--color-text-desaturated-dark-violet);
+
+    border-radius: 0.5rem 0.5rem 0 0.5rem;
+
+    align-self: flex-end;
+}
+
+.dog__image__container{
+    display: flex;
+    align-self: flex-end;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.dog__image{
+    display: block;
+    width:2.5rem;
+    aspect-ratio: 1/1;
+    border-radius: 0.5rem;
+}
+
+.walking__price{
+    width: 10rem;
+    background:var(--gradient-tertiary);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:0.5rem;
+    padding:0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-white);
+
+    border-radius: 0.5rem 0.5rem 0.5rem 0;
+
+    align-self: flex-start;
+    /* font-size: 0.625rem; */
+}
+
+.bi-circle{
+    opacity: 0.5;
+}
+
+.walking__price span:last-of-type {
+    font-size: 0.75rem;
+    font-weight:700;
+    margin-left: auto;
+}
+
+.placeholder{
+    /* display: block; */
+    /* width: 100%; */
+    padding: 0.3rem;
+    border-radius: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-white);
+    color: var(--color-text-grayish-blue);
+}
+
+.placeholder span{
+    padding-left: 0.5rem;
+    font-size: .625rem;
+}
+
+.placeholder button {
+    background-color: var(--color-bg-very-dark-desaturated-violet) ;
+    border: none;
+    border-radius: 50%;
+    width: 1.5rem;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+}
+
+
+/* Wrapper content, info below phone */
+
+.wrapper__content{
+    text-align: center;
+}
+
+.content__header{
+    color: var( --color-text-very-dark-desaturated-violet);
+    font-size: 2.5rem;
+    margin-bottom: 1.875rem;
+    font-weight: 500;
+}
+
+.content__text{
+    color: var(--color-text-dark-grayish-violet);
+    line-height: 1.75;
+}
+
+
+/* Utility */
+
+.mb-6{
+    margin-bottom: 1rem;
+}
+
+
+@media (min-width:37.5rem) {    
+
+    .wrapper{
+        grid-template-columns: 2fr 3fr;
+    }
+
+    .wrapper__content{
+        text-align: left;
+    }
+    
+}
+
+
+
